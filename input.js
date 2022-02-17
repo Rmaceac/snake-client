@@ -16,6 +16,10 @@ const handleUserInput = function(hotkey) {
   if (hotkey === 'd') {
     connection.write("Move: right");
   }
+  // if user presses space, return "Zoinks!"
+  if (hotkey === ' ') {
+    connection.write("Say: Zoinks!");
+  }
 };
 
 const setupInput = (conn) => {
