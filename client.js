@@ -1,4 +1,4 @@
-const net = require('net');
+const net = require("net");
 
 const connect = function () {
   const conn = net.createConnection({
@@ -15,15 +15,15 @@ const connect = function () {
     conn.write("Name: MAC");
   });
 
+  conn.on("data", (data) => {
+    // logging anything the server sends to the client
+    console.log(data);
+  });
+
   return conn;
 };
 
-// this is logged to the console as we attempt to connect to the server
-const connectionPrompt = console.log("Connecting...");
-connect();
-
 module.exports = {
   connect,
-  connectionPrompt,
 };
 
